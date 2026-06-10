@@ -154,7 +154,7 @@ profiles:
     category: PhD students
     image_circular: false # crops the image to make it circular
     more_info: >
-      <a href="https://www.linkedin.com/in/li-liao-851ab0326" style="font-size: larger; font-weight: bold;">Li Liao</a><br>
+      <a href="https://liliao20.github.io/" style="font-size: larger; font-weight: bold;">Li Liao</a><br>
       Computational Optics<br>
       liliao24@connect.hku.hk
 
@@ -218,18 +218,19 @@ profiles:
 
 # Visitor
 
-
   - align: 
-    image: 
+    image: Jialin.jpg
     content: 
     Details: false
     category: Visitor/RA
     image_circular: false # crops the image to make it circular
     more_info: >
-      <a href="https://github.com/haoming-Yu" style="font-size: larger; font-weight: bold;">Haoming Yu</a><br>
+      <a href="https://www.linkedin.com/in/jialin-liang-3352b8351/" style="font-size: larger; font-weight: bold;">Jialin Liang</a><br>
       Visiting Student<br>
-      3D/4D Reconstruction, SLAM<br>
-      haoming_yu@zju.edu.cn
+      Computer graphics/rendering, Computer vision<br>
+      1806949407liang@gmail.com
+
+
 
 
 
@@ -258,6 +259,21 @@ profiles:
 
 
 # Alumni
+
+  - align: 
+    image: 
+    content: 
+    Details: false
+    category: Alumni
+    image_circular: false # crops the image to make it circular
+    more_info: >
+      <a href="https://github.com/haoming-Yu" style="font-size: larger; font-weight: bold;">Haoming Yu</a><br>
+      Visiting Student<br>
+      3D/4D Reconstruction, SLAM<br>
+      haoming_yu@zju.edu.cn
+
+
+
   - align: 
     image: 
     content: 
