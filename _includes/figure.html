@@ -1,8 +1,21 @@
 {%- assign img_path = include.path | remove: ".jpg" | remove: ".jpeg" | remove: ".png" | remove: ".tiff" -%}
+{%- if include.optimized_path -%}
+  {%- assign optimized_480 = include.optimized_path | append: "-480.webp" -%}
+  {%- assign optimized_800 = include.optimized_path | append: "-800.webp" -%}
+  {%- assign optimized_sizes = include.sizes | default: "100vw" -%}
+{%- endif -%}
 
 <figure>
 
   <picture>
+    {% if include.optimized_path %}
+      <source
+        type="image/webp"
+        srcset="{{ optimized_480 | relative_url }} 480w, {{ optimized_800 | relative_url }} 800w"
+        sizes="{{ optimized_sizes }}"
+      />
+    {% endif %}
+
     {% if site.imagemagick.enabled %}
     {% for i in site.imagemagick.widths -%}
       <source
@@ -17,6 +30,9 @@
     <img
       src="{% if include.cache_bust %}{{ include.path | relative_url | bust_file_cache }}{% else %}{{ include.path | relative_url }}{% endif %}"
       {% if include.class %}class="{{ include.class }}"{% endif %}
+      {% if include.loading %}loading="{{ include.loading }}"{% endif %}
+      {% if include.decoding %}decoding="{{ include.decoding }}"{% endif %}
+      {% if include.fetchpriority %}fetchpriority="{{ include.fetchpriority }}"{% endif %}
       {% if include.width %}width="{{ include.width }}"{% else %}width="auto"{% endif %}
       {% if include.height %}height="{{ include.height }}"{% else %}height="auto"{% endif %}
       {% if include.min-width %}min-width="{{ include.min-width }}"{% endif %}

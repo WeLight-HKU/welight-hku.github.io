@@ -6,7 +6,8 @@ subtitle: #
 
 profile:
   align: right
-  image: prof_pic.mp4
+  image: prof_pic-optimized.mp4
+  poster: prof_pic-poster.webp
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>301 Haking Wong Building</p>

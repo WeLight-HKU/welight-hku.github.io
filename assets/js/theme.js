@@ -1,5 +1,21 @@
 // Has to be in the head tag, otherwise a flicker effect will occur.
 
+let getStoredTheme = () => {
+  try {
+    return localStorage.getItem("theme");
+  } catch (error) {
+    return document.documentElement.getAttribute("data-theme");
+  }
+};
+
+let storeTheme = (theme) => {
+  try {
+    localStorage.setItem("theme", theme);
+  } catch (error) {
+    // The theme still works for the current page when storage is unavailable.
+  }
+};
+
 let toggleTheme = (theme) => {
   if (theme == "dark") {
     setTheme("light");
@@ -43,7 +59,7 @@ let setTheme = (theme) => {
     document.documentElement.removeAttribute("data-theme");
   }
 
-  localStorage.setItem("theme", theme);
+  storeTheme(theme);
 
   // Updates the background of medium-zoom overlay.
   if (typeof medium_zoom !== "undefined") {
@@ -98,4 +114,4 @@ let initTheme = (theme) => {
   setTheme(theme);
 };
 
-initTheme(localStorage.getItem("theme"));
+initTheme(getStoredTheme());

@@ -16,14 +16,35 @@ layout: custom
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
+    :root {
+      /*
+       * Workshop accent entry point.
+       * Change this value to recolor all accent text, links, panels, shadows,
+       * and buttons on the 26Aug page.
+       */
+      --workshop-theme-color: #461889;
+
+      /* Derived translucent colors; these follow --workshop-theme-color. */
+      --workshop-theme-surface: color-mix(in srgb, var(--workshop-theme-color) 4%, transparent);
+      --workshop-theme-shadow-40: color-mix(in srgb, var(--workshop-theme-color) 40%, transparent);
+      --workshop-theme-shadow-30: color-mix(in srgb, var(--workshop-theme-color) 30%, transparent);
+      --workshop-theme-shadow-20: color-mix(in srgb, var(--workshop-theme-color) 20%, transparent);
+      --workshop-theme-shadow-10: color-mix(in srgb, var(--workshop-theme-color) 10%, transparent);
+      --workshop-theme-shadow-05: color-mix(in srgb, var(--workshop-theme-color) 5%, transparent);
+    }
+
+    html[data-theme='dark'] {
+      /* Dark-mode accent entry point. */
+      --workshop-theme-color: #b99df0;
+    }
+
     .h1_1 {
       font-size: 43px !important;
       font-weight: 700 !important;
     }
 
-    /* #461889  #461889 461889*/
     .h2_1 {
-      color: #461889 !important;
+      color: var(--workshop-theme-color) !important;
       font-size: 45px !important;
       font-weight: 500 !important;
       margin-top: -2.5rem !important;
@@ -180,14 +201,18 @@ layout: custom
       font-family: 'Poppins', sans-serif !important;
     }
 
-    /* 255,0,0 165 54 0 70 24 137 */
     .schedule {
       width: 100%;
       margin: 0;
-      background: rgba(70, 24, 137, 0.04);
+      background: var(--workshop-theme-surface);
       border-radius: 0;
       overflow: hidden;
-      box-shadow: rgba(70, 24, 137, 0.4) 5px 5px, rgba(70, 24, 137, 0.3) 10px 10px, rgba(70, 24, 137, 0.2) 15px 15px, rgba(70, 24, 137, 0.1) 20px 20px, rgba(70, 24, 137, 0.05) 25px 25px;
+      box-shadow:
+        var(--workshop-theme-shadow-40) 5px 5px,
+        var(--workshop-theme-shadow-30) 10px 10px,
+        var(--workshop-theme-shadow-20) 15px 15px,
+        var(--workshop-theme-shadow-10) 20px 20px,
+        var(--workshop-theme-shadow-05) 25px 25px;
       margin-bottom: 4rem;
       padding: 1rem;
     }
@@ -208,7 +233,7 @@ layout: custom
       align-items: center;
       flex: 0 0 20%;
       font-weight: 600;
-      color: #461889;
+      color: var(--workshop-theme-color);
       margin-right: 1rem;
     }
 
@@ -222,9 +247,13 @@ layout: custom
       font-weight: 600;
     }
 
+    .title.is-section-heading {
+      color: var(--workshop-theme-color) !important;
+    }
+
     .speaker {
       font-size: 16px;
-      color: #666;
+      color: var(--global-text-color-light);
     }
 
     .speaker-container {
@@ -277,11 +306,11 @@ layout: custom
     .speaker-title {
       /* font-weight: bold; */
       font-size: 16px;
-      color: #666;
+      color: var(--global-text-color-light);
     }
 
     .speaker-link a {
-      color: #461889;
+      color: var(--workshop-theme-color);
       text-decoration: none;
     }
 
@@ -298,7 +327,7 @@ layout: custom
     }
 
     .material-detail {
-      background-color: rgba(49, 112, 45, 0.04);
+      background-color: var(--workshop-theme-surface);
       margin-bottom: 1rem;
       /* border: 1px solid var(--global-distill-app-color); */
       /* box-shadow: 0 2px 4px var(--global-divider-color); */
@@ -308,7 +337,7 @@ layout: custom
 
     .material-summary {
       font-weight: 600;
-      color: #461889;
+      color: var(--workshop-theme-color);
       padding: 1rem;
       margin: 0;
       cursor: pointer;
@@ -316,6 +345,10 @@ layout: custom
       position: relative;
       list-style: none;
       transition: all 0.3s ease-in-out;
+    }
+
+    .material-speaker {
+      color: var(--global-text-color);
     }
 
     .material-summary::after {
@@ -348,7 +381,7 @@ layout: custom
     }
 
     .material-content a {
-      color: #461889;
+      color: var(--workshop-theme-color);
       text-decoration: none;
     }
 
@@ -361,7 +394,7 @@ layout: custom
 
     .material-content ol li::before {
       content: "•";
-      color: #461889;
+      color: var(--workshop-theme-color);
       font-weight: bold;
       position: absolute;
       left: 0;
@@ -381,7 +414,7 @@ layout: custom
     }
 
     .material-summary:hover {
-      background-color: var(--global-hover-colorr);
+      background-color: var(--workshop-theme-surface);
     }
 
     details>summary {
@@ -423,12 +456,12 @@ layout: custom
     .foot-title {
       /* font-weight: bold; */
       font-size: 24px;
-      color: #666;
+      color: var(--global-text-color-light);
       font-weight: 700
     }
 
     .foot-link a {
-      color: #461889;
+      color: var(--workshop-theme-color);
       text-decoration: none;
       font-size: 24px;
       font-weight: 300
@@ -443,7 +476,7 @@ layout: custom
       display: inline-block;
       padding: 10px 20px;
       text-align: center;
-      color: white;
+      color: var(--global-bg-color);
       text-decoration: none !important;
       font-size: 21px;
       position: relative;
@@ -451,7 +484,7 @@ layout: custom
       margin-bottom: 1rem;
       font-weight: 600;
       border-radius: 5px;
-      background: #557750;
+      background: var(--workshop-theme-color);
       transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, padding-right 0.3s;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.20);
     }
@@ -467,8 +500,8 @@ layout: custom
 
     .register-button:hover {
       padding-right: 40px;
-      background-color: #557750;
-      color: white ! important;
+      background-color: var(--workshop-theme-color);
+      color: var(--global-bg-color) !important;
       text-decoration: none;
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.20);
       transform: translateY(-3px);
@@ -492,13 +525,13 @@ layout: custom
     }
 
     .modal-content {
-      background-color: #fefefe;
+      background-color: var(--global-card-bg-color);
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       padding: 20px;
-      border: 1px solid #888;
+      border: 1px solid var(--global-divider-color);
       width: 90%;
       max-width: 1200px;
       height: 85%;
@@ -509,7 +542,7 @@ layout: custom
     }
 
     .close {
-      color: #aaa;
+      color: var(--global-text-color-light);
       float: right;
       font-size: 28px;
       font-weight: bold;
@@ -517,7 +550,7 @@ layout: custom
 
     .close:hover,
     .close:focus {
-      color: black;
+      color: var(--global-text-color);
       text-decoration: none;
       cursor: pointer;
     }
@@ -582,7 +615,7 @@ layout: custom
 
     #navbar a {
       text-decoration: none;
-      color: #333;
+      color: var(--global-text-color);
       padding: 0.5rem 1rem;
       flex-shrink: 0;
     }
@@ -753,7 +786,7 @@ layout: custom
           sessionElement.innerHTML = `
           <div class="time">${session.showTime ? timeContent : ''}</div>
           <div class="details">
-            <div class="title" ${!session.showTime ? 'style="color: #461889 !important"' : ''}>${session.title}</div>
+            <div class="title${!session.showTime ? ' is-section-heading' : ''}">${session.title}</div>
             ${session.speaker ? `<div class="speaker">${session.speaker}</div>` : ''}
           </div>
         `;
@@ -874,7 +907,7 @@ layout: custom
 
         <!-- Xuejin Chen -->
         <div class="speaker-profile">
-          <img class="speaker-photo" src="/assets/img/workshop/Xuejin Chen.jpg" alt="Xuejin Chen">
+          <img class="speaker-photo" src="/assets/img/workshop/Xuejin Chen.jpg" alt="Xuejin Chen" loading="lazy" decoding="async">
           <div class="speaker-content">
             <h2 class="speaker-name">Xuejin Chen</h2>
             <h3 class="speaker-title">University of Science and Technology of China (USTC)</h3>
@@ -895,7 +928,7 @@ layout: custom
 
         <!-- Yuxing Li -->
         <div class="speaker-profile">
-          <img class="speaker-photo" src="/assets/img/workshop/Yuxing Li.jpg" alt="Yuxing Li">
+          <img class="speaker-photo" src="/assets/img/workshop/Yuxing Li.jpg" alt="Yuxing Li" loading="lazy" decoding="async">
           <div class="speaker-content">
             <h2 class="speaker-name">Yuxing Li</h2>
             <h3 class="speaker-title">The University of Hong Kong (HKU)</h3>
@@ -912,7 +945,7 @@ layout: custom
 
         <!-- Xiaoyang Bai -->
         <div class="speaker-profile">
-          <img class="speaker-photo" src="/assets/img/workshop/Xiaoyang Bai.jpg" alt="Xiaoyang Bai">
+          <img class="speaker-photo" src="/assets/img/workshop/Xiaoyang Bai.jpg" alt="Xiaoyang Bai" loading="lazy" decoding="async">
           <div class="speaker-content">
             <h2 class="speaker-name">Xiaoyang Bai</h2>
             <h3 class="speaker-title">The University of Hong Kong (HKU)</h3>
@@ -928,7 +961,7 @@ layout: custom
 
         <!-- Weiren Zhao -->
         <div class="speaker-profile">
-          <img class="speaker-photo" src="/assets/img/workshop/Weiren Zhao.jpg" alt="Weiren Zhao">
+          <img class="speaker-photo" src="/assets/img/workshop/Weiren Zhao.jpg" alt="Weiren Zhao" loading="lazy" decoding="async">
           <div class="speaker-content">
             <h2 class="speaker-name">Weiren Zhao</h2>
             <h3 class="speaker-title">The University of Hong Kong (HKU)</h3>
@@ -943,7 +976,7 @@ layout: custom
 
         <!-- Yirui Zhang -->
         <div class="speaker-profile">
-          <img class="speaker-photo" src="/assets/img/workshop/Yirui Zhang.jpg" alt="Yirui Zhang">
+          <img class="speaker-photo" src="/assets/img/workshop/Yirui Zhang.jpg" alt="Yirui Zhang" loading="lazy" decoding="async">
           <div class="speaker-content">
             <h2 class="speaker-name">Yirui Zhang</h2>
             <h3 class="speaker-title">University of Science and Technology of China (USTC)</h3>
@@ -957,7 +990,7 @@ layout: custom
 
         <!-- Guowei Huang -->
         <div class="speaker-profile">
-          <img class="speaker-photo" src="/assets/img/workshop/Guowei Huang.jpg" alt="Guowei Huang">
+          <img class="speaker-photo" src="/assets/img/workshop/Guowei Huang.jpg" alt="Guowei Huang" loading="lazy" decoding="async">
           <div class="speaker-content">
             <h2 class="speaker-name">Guowei Huang</h2>
             <h3 class="speaker-title">University of Science and Technology of China (USTC)</h3>
@@ -972,7 +1005,7 @@ layout: custom
 
         <!-- Yunjie Liao -->
         <div class="speaker-profile">
-          <img class="speaker-photo" src="/assets/img/workshop/Yunjie Liao.jpg" alt="Yunjie Liao">
+          <img class="speaker-photo" src="/assets/img/workshop/Yunjie Liao.jpg" alt="Yunjie Liao" loading="lazy" decoding="async">
           <div class="speaker-content">
             <h2 class="speaker-name">Yunjie Liao</h2>
             <h3 class="speaker-title">University of Science and Technology of China (USTC)</h3>
@@ -997,7 +1030,7 @@ layout: custom
         <!-- Xuejin Chen -->
         <details class="material-detail">
           <summary class="material-summary">Geometric Modeling and Morphological Analysis for Connectomics from
-            Large-Scale Electron Microscopy Images <span style="color:black;"> - Xuejin Chen</span></summary>
+            Large-Scale Electron Microscopy Images <span class="material-speaker"> - Xuejin Chen</span></summary>
           <div class="material-content">
 
             <p>
@@ -1015,7 +1048,7 @@ layout: custom
         <!-- Yuxing Li -->
         <details class="material-detail">
           <summary class="material-summary">Polarimetric-Hyperspectral Microscopy for Resolving Chemical and Structural
-            Signatures <span style="color:black;"> - Yuxing Li</span></summary>
+            Signatures <span class="material-speaker"> - Yuxing Li</span></summary>
           <div class="material-content">
 
             <p>
@@ -1039,7 +1072,7 @@ layout: custom
         <!-- Xiaoyang Bai -->
         <details class="material-detail">
           <summary class="material-summary">Differentiable Rendering and 3D Reconstruction with Unconventional Visual
-            Modalities <span style="color:black;"> - Xiaoyang Bai</span></summary>
+            Modalities <span class="material-speaker"> - Xiaoyang Bai</span></summary>
           <div class="material-content">
 
             <p>
@@ -1060,7 +1093,7 @@ layout: custom
         <!-- Weiren Zhao -->
         <details class="material-detail">
           <summary class="material-summary">SynerMedGen: Synergizing Medical Multimodal Understanding with Generation
-            via Task Alignment <span style="color:black;"> - Weiren Zhao</span></summary>
+            via Task Alignment <span class="material-speaker"> - Weiren Zhao</span></summary>
           <div class="material-content">
 
             <p>
@@ -1085,7 +1118,7 @@ layout: custom
         <!-- Yirui Zhang -->
         <details class="material-detail">
           <summary class="material-summary">Geometry-Aware Learning for Dendrite–Spine Connectivity Reconstruction in
-            Large-Scale Electron Microscopy Images <span style="color:black;"> - Yirui Zhang</span></summary>
+            Large-Scale Electron Microscopy Images <span class="material-speaker"> - Yirui Zhang</span></summary>
           <div class="material-content">
 
             <p>
@@ -1107,7 +1140,7 @@ layout: custom
         <!-- Guowei Huang -->
         <details class="material-detail">
           <summary class="material-summary">BacUNet: Deciphering Overlapping Microbial Communities via Curriculum
-            Learning and Multi-Label Segmentation <span style="color:black;"> - Guowei Huang</span></summary>
+            Learning and Multi-Label Segmentation <span class="material-speaker"> - Guowei Huang</span></summary>
           <div class="material-content">
 
             <p>
@@ -1128,7 +1161,7 @@ layout: custom
         <!-- Yunjie Liao -->
         <details class="material-detail">
           <summary class="material-summary">Neuron Reconstruction and Automated Tracing from Large-Scale EM Segmentation
-            Data <span style="color:black;"> - Yunjie Liao</span></summary>
+            Data <span class="material-speaker"> - Yunjie Liao</span></summary>
           <div class="material-content">
 
             <p>
@@ -1159,11 +1192,11 @@ layout: custom
 
       <div class="logos-container">
         <a href="https://www.hku.hk" target="_blank">
-          <img src="/assets/img/logos/HKU.png" alt="Organization Logo">
+          <img src="/assets/img/logos/HKU.png" alt="Organization Logo" loading="lazy" decoding="async">
         </a>
 
         <a href="https://www.ustc.edu.cn/" target="_blank">
-          <img src="/assets/img/logos/USTC.png" alt="Organization 2 Logo">
+          <img src="/assets/img/logos/USTC.png" alt="Organization 2 Logo" loading="lazy" decoding="async">
         </a>
 
       </div>

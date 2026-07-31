@@ -965,6 +965,15 @@ footer.sticky-bottom {
         background: var(--white);
         min-width: 90%;
       }
+
+      .publication-video-preview {
+        display: block;
+        width: 90%;
+        max-height: 12rem;
+        margin-top: 0.3rem;
+        object-fit: contain;
+        background: var(--global-bg-color);
+      }
       .abbr {
         height: 2rem;
         margin-bottom: 0.5rem;
@@ -1149,8 +1158,17 @@ footer.sticky-bottom {
     transform-origin: center center;
   }
 
+  .row-hover-effect .publication-video-preview {
+    transition: transform 0.3s ease;
+    transform-origin: center center;
+  }
+
   /* Hover 时等比放大，因宽度自适应，放大效果只在水平方向可见 */
   .row-hover-effect:hover .preview img {
+    transform: scale(1.1);
+  }
+
+  .row-hover-effect:hover .publication-video-preview {
     transform: scale(1.1);
   }
 }
