@@ -1,1 +1,1 @@
-document.addEventListener("DOMContentLoaded",function(){document.getElementById("light-toggle").addEventListener("click",function(){toggleTheme(localStorage.getItem("theme"))})});
+document.addEventListener("click",function(e){const t=e.target;t instanceof Element&&t.closest("#light-toggle")&&toggleTheme(getStoredTheme())});
