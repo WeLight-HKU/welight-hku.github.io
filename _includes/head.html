@@ -39,3 +39,7 @@
     <script src="{{ '/assets/js/theme.js' | relative_url | bust_file_cache }}"></script>
     <script src="{{ '/assets/js/dark_mode.js' | relative_url | bust_file_cache }}"></script>
     {% endif %}
+
+    {% if page.permalink == '/' or page.permalink == '/publications/' or page.selected_papers or page.publications %}
+    <script src="{{ '/assets/js/publication_controls.js' | relative_url | bust_file_cache }}"></script>
+    {% endif %}

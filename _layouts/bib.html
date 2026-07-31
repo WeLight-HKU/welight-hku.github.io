@@ -57,7 +57,7 @@
         <div class="title">{{entry.title}}</div>
 
         <!-- Author -->
-        <div class="collapsible-content" style="padding-left: 0px; padding-right: 0px;">
+        <div id="{{ entry.key }}-details" class="collapsible-content" style="padding-left: 0px; padding-right: 0px;">
         <div class="author">
         {% assign author_array_size = entry.author_array | size %}
 
@@ -160,19 +160,33 @@
           {{ entry.note | strip }}
         </div>
       </div>
-      
           <!-- Links/Buttons -->
           <div class="links">
-           <a class="btn special-btn btn-sm z-depth-0" role="button">Show More</a>
+           <button
+             type="button"
+             class="btn special-btn btn-sm z-depth-0"
+             aria-controls="{{ entry.key }}-details"
+             aria-expanded="false"
+           >Show More</button>
 
           {%- if entry.abstract %}
-            <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+            <button
+              type="button"
+              class="abstract btn btn-sm z-depth-0"
+              aria-controls="{{ entry.key }}-abstract"
+              aria-expanded="false"
+            >Abs</button>
           {%- endif %}
           {%- if entry.arxiv %}
             <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button">arXiv</a>
           {%- endif %}
           {%- if entry.bibtex_show %}
-            <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
+            <button
+              type="button"
+              class="bibtex btn btn-sm z-depth-0"
+              aria-controls="{{ entry.key }}-bibtex"
+              aria-expanded="false"
+            >Bib</button>
           {%- endif %}
           {%- if entry.html %}
             <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button">HTML</a>
@@ -252,14 +266,14 @@
 
           {% if entry.abstract -%}
           <!-- Hidden abstract block -->
-          <div class="abstract hidden">
+          <div id="{{ entry.key }}-abstract" class="abstract hidden">
             <p>{{ entry.abstract }}</p>
           </div>
           {%- endif -%}
 
           {% if entry.bibtex_show -%}
           <!-- Hidden bibtex block -->
-          <div class="bibtex hidden">
+          <div id="{{ entry.key }}-bibtex" class="bibtex hidden">
             {% highlight bibtex %}{{ entry.bibtex | hideCustomBibtex }}{% endhighlight %}
           </div>
           {%- endif %}
@@ -267,54 +281,3 @@
 
         </div>
       </div>
-
-
-      <script>
-
-document.addEventListener('DOMContentLoaded', function () {
-  var toggleButtons = document.querySelectorAll('a.special-btn');
-
-  function adjustDisplayForSize(collapsibleContent, toggleButton) {
-    if (window.innerWidth >= 576) {
-      collapsibleContent.style.display = 'block';
-      toggleButton.textContent = 'Show Less';
-    } else {
-      collapsibleContent.style.display = 'none';
-      toggleButton.textContent = 'Show More';
-    }
-  }
-
-  toggleButtons.forEach(function(toggleButton) {
-    if (toggleButton.dataset.hasBoundClick) {
-      return; 
-    }
-
-    var collapsibleContent = toggleButton.closest('.row-hover-effect').querySelector('.collapsible-content');
-    
-    adjustDisplayForSize(collapsibleContent, toggleButton);
-
-    toggleButton.addEventListener('click', function () {
-      if (collapsibleContent.style.display === 'none' || !collapsibleContent.style.display) {
-        collapsibleContent.style.display = 'block';
-        toggleButton.textContent = 'Show Less';
-      } else {
-        collapsibleContent.style.display = 'none';
-        toggleButton.textContent = 'Show More';
-      }
-    });
-
-    toggleButton.dataset.hasBoundClick = true;
-  });
-
-  window.addEventListener('resize', function() {
-    var collapsibleContents = document.querySelectorAll('.collapsible-content');
-    var buttons = document.querySelectorAll('a.special-btn');
-    collapsibleContents.forEach(function(content, index) {
-      adjustDisplayForSize(content, buttons[index]);
-    });
-  });
-});
-
-
-
-      </script>
