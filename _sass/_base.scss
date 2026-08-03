@@ -186,7 +186,7 @@ blockquote {
 
 .join-us a {
   font-weight: normal; 
-  color: #007bff;//#158CBA; //  
+  color: var(--global-theme-color);
   display: inline-block; 
   font-size: 1em; 
   // text-transform: uppercase; 
@@ -358,7 +358,7 @@ blockquote {
   font-size: 0.875rem;
 
   a {
-    color: #0076df;
+    color: var(--global-theme-color);
 
     &:hover {
       color: var(--global-theme-color);
