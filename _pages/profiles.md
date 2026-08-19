@@ -218,17 +218,19 @@ profiles:
 
 # Visitor
 
+
+
   - align: 
-    image: Jialin.jpg
+    image: Yihua.jpg
     content: 
     Details: false
     category: Visitor/RA
     image_circular: false # crops the image to make it circular
     more_info: >
-      <a href="https://www.linkedin.com/in/jialin-liang-3352b8351/" style="font-size: larger; font-weight: bold;">Jialin Liang</a><br>
+      <a href="https://www.linkedin.com/in/华义-张-522463418?utm_source=share_via&utm_content=profile&utm_medium=member_android" style="font-size: larger; font-weight: bold;">Yihua Zhang</a><br>
       Visiting Student<br>
-      Computer graphics/rendering, Computer vision<br>
-      1806949407liang@gmail.com
+      Computational holography, Optics<br>
+      3230105273@zju.edu.cn
 
 
 
@@ -259,6 +261,19 @@ profiles:
 
 
 # Alumni
+
+
+  - align: 
+    image: 
+    content: 
+    Details: false
+    category: Alumni
+    image_circular: false # crops the image to make it circular
+    more_info: >
+      <a href="https://www.linkedin.com/in/jialin-liang-3352b8351/" style="font-size: larger; font-weight: bold;">Jialin Liang</a><br>
+      Visiting Student<br>
+      Computer graphics/rendering, Computer vision<br>
+      1806949407liang@gmail.com
 
   - align: 
     image: 
