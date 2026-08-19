@@ -221,13 +221,13 @@ profiles:
 
 
   - align: 
-    image: Yihua.jpg
+    image: Huayi.jpg
     content: 
     Details: false
     category: Visitor/RA
     image_circular: false # crops the image to make it circular
     more_info: >
-      <a href="https://www.linkedin.com/in/华义-张-522463418?utm_source=share_via&utm_content=profile&utm_medium=member_android" style="font-size: larger; font-weight: bold;">Yihua Zhang</a><br>
+      <a href="https://www.linkedin.com/in/华义-张-522463418?utm_source=share_via&utm_content=profile&utm_medium=member_android" style="font-size: larger; font-weight: bold;">Huayi Zhang</a><br>
       Visiting Student<br>
       Computational holography, Optics<br>
       3230105273@zju.edu.cn
