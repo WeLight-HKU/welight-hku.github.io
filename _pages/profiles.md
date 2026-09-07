@@ -65,6 +65,17 @@ profiles:
       Computational Imaging<br>
       raygeng@hku.hk
 
+  - align: 
+    image: Yujie.jpg
+    content: 
+    category: Postdoc
+    Details: false
+    image_circular: false # crops the image to make it circular
+    more_info: >
+      <a href="https://yujiewang.info/" style="font-size: larger; font-weight: bold;">Yujie Wang</a><br>
+      Computational Holography,  Graphics<br>
+      yujiew@hku.hk
+
 
 # Phd
 
