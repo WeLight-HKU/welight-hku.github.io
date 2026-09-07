@@ -76,7 +76,7 @@ profiles:
     category: PhD students
     image_circular: false # crops the image to make it circular
     more_info: >
-      <a href="https://www.linkedin.com/in/xiangyu-meng-907836302/" style="font-size: larger; font-weight: bold;">Xiangyu Meng</a><br>
+      <a href="https://urimoo.github.io/" style="font-size: larger; font-weight: bold;">Xiangyu Meng</a><br>
       Computational Holography, Graphics<br>
       mengxy22@connect.hku.hk
 
