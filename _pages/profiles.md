@@ -76,6 +76,17 @@ profiles:
       Computational Holography,  Graphics<br>
       yujiew@hku.hk
 
+  - align: 
+    image: Yunhao.jpg
+    content: 
+    category: Postdoc
+    Details: false
+    image_circular: false # crops the image to make it circular
+    more_info: >
+      <a href="https://yunhaoli2020.github.io/" style="font-size: larger; font-weight: bold;">Yunhao Li</a><br>
+      Computer Vision, Computational Imaging<br>
+      yunhaol@hku.hk
+
 
 # Phd
 
