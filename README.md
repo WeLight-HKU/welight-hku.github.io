@@ -1,4 +1,7 @@
 # al-folio
+
+Gallery 图片的命名、插入和移动方法见 [Gallery 维护说明](assets/img/gallery/README.md)。
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [maintainers]: https://img.shields.io/badge/maintainers-4-success.svg 'Number of maintainers'
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
