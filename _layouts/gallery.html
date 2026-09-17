@@ -4,39 +4,28 @@ title: Gallery
 description: A glimpse of our lab moments
 ---
 
-<!-- <div class="gallery-container">
-  {% assign gallery_images = site.static_files | where_exp: "file", "file.path contains 'assets/img/gallery'" %}
-  {% for file in gallery_images %}
-    {% if file.extname == ".jpg" or file.extname == ".png" or file.extname == ".jpeg" %}
-      <div class="gallery-item">
-        <img
-          src="{{ file.path }}"
-          alt="Lab photo"
-          data-index="{{ forloop.index0 }}"
-          onclick="openLightbox(this)"
-        />
-      </div>
-    {% endif %}
-  {% endfor %}
-</div> -->
-
-
+{% comment %}
+  Four-digit prefixes sort descending: 3900, 3800, 3700, ...
+  Add 4000.jpg to prepend a photo; see assets/img/gallery/README.md.
+  Filter images before the loop so other files do not affect data-index.
+{% endcomment %}
+<div class="gallery-wrapper">
 <div class="gallery-container">
   {% assign gallery_images = site.static_files
-    | where_exp: "file", "file.path contains 'assets/img/gallery'"
+    | where_exp: "file", "file.path contains '/assets/img/gallery/'"
+    | where_exp: "file", "file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.png'"
     | sort: "name"
     | reverse %}
   {% for file in gallery_images %}
-    {% if file.extname == ".jpg" or file.extname == ".png" or file.extname == ".jpeg" %}
-      <div class="gallery-item">
-        <img
-          src="{{ file.path }}"
-          alt="Lab photo"
-          data-index="{{ forloop.index0 }}"
-        />
-      </div>
-    {% endif %}
+    <div class="gallery-item">
+      <img
+        src="{{ file.path | relative_url | bust_file_cache }}"
+        alt="Lab photo"
+        data-index="{{ forloop.index0 }}"
+      />
+    </div>
   {% endfor %}
+</div>
 </div>
 
 <div id="overlay" class="overlay" onclick="closeLightbox()"></div>
@@ -48,14 +37,32 @@ description: A glimpse of our lab moments
 </div>
 
 <style>
+.gallery-wrapper {
+  padding: 20px;
+}
 .gallery-container {
   column-count: 3;
   column-gap: 20px;
-  padding: 20px;
 }
-@media (max-width: 1000px) { .gallery-container { column-count: 2; } }
+/* CSS columns remain the fallback until Masonry initializes. */
+.gallery-container.gallery-masonry {
+  column-count: auto;
+}
+.gallery-masonry .gallery-item {
+  width: calc((100% - 40px) / 3);
+}
+/* Theme transitions must not animate the sizes that Masonry measures. */
+html.transition .gallery-container,
+html.transition .gallery-item {
+  transition: none !important;
+}
+@media (max-width: 1000px) {
+  .gallery-container { column-count: 2; }
+  .gallery-masonry .gallery-item { width: calc((100% - 20px) / 2); }
+}
 @media (max-width: 600px)  {
   .gallery-container { column-count: 1; }
+  .gallery-masonry .gallery-item { width: 100%; }
   .gallery-item img {
     cursor: default;
     pointer-events: none;
