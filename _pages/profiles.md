@@ -135,17 +135,7 @@ profiles:
       Computational Optics, Multimodal Fusion<br>
       liuyuhui@connect.hku.hk
 
-  - align:
-    image: Shijie.jpg
-    content: 
-    Details: false
-    category: PhD students
-    image_circular: false # crops the image to make it circular
-    more_info: >
-      <a href="https://sj-lin.top/" style="font-size: larger; font-weight: bold;">Shijie Lin</a> <br>
-      <small>(Co-supervised)</small> <br>
-      Event-based Vision, Robotics, Computational Imaging<br>
-      lsj2048@connect.hku.hk
+
 
   - align:
     image: Hyunmin.jpg
@@ -235,6 +225,19 @@ profiles:
       <a href="https://wuyou012.github.io/" style="font-size: larger; font-weight: bold;">Zongqi He</a><br>
       Vision (3D/4D), 3D Reconstruction<br>
       tangdi0110@gmail.com
+
+  - align: 
+    image: Lingyu.jpg
+    content: 
+    Details: false
+    category: PhD students
+    image_circular: false # crops the image to make it circular
+    more_info: >
+      <a href="https://www.linkedin.com/in/lingyu-tang-a949592a3" style="font-size: larger; font-weight: bold;">Lingyu Tang</a><br>
+      Computational Physics<br>
+      lingyu.tang@connect.hku.hk
+
+
 # RA
 
 
@@ -283,6 +286,18 @@ profiles:
 
 
 # Alumni
+
+  - align:
+    image: 
+    content: 
+    Details: false
+    category: Alumni
+    image_circular: false # crops the image to make it circular
+    more_info: >
+      <a href="https://sj-lin.top/" style="font-size: larger; font-weight: bold;">Shijie Lin</a> <br>
+      PhD Graduate (Co-supervised) <br>
+      Event-based Vision, Robotics, Computational Imaging<br>
+      lsj2048@connect.hku.hk
 
 
   - align: 
