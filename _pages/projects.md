@@ -5,12 +5,12 @@ permalink: /teaching/
 description: 
 nav: true
 nav_order: 4
-display_categories: ["Since 2022, Winter-Spring", "Since 2023, Fall-Winter"]
+display_categories: ["Winter-Spring", "Fall-Winter"]
 horizontal: false
 ---
 
 <!-- pages/projects.md -->
-<div class="projects">
+<div class="projects teaching">
 {%- if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->
   {%- for category in page.display_categories %}
@@ -27,7 +27,7 @@ horizontal: false
     </div>
   </div>
   {%- else -%}
-  <div class="grid">
+  <div class="teaching-grid">
     {%- for project in sorted_projects -%}
       {% include projects.html %}
     {%- endfor %}
@@ -48,7 +48,7 @@ horizontal: false
     </div>
   </div>
   {%- else -%}
-  <div class="grid">
+  <div class="teaching-grid">
     {%- for project in sorted_projects -%}
       {% include projects.html %}
     {%- endfor %}
