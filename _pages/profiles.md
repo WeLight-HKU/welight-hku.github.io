@@ -246,10 +246,51 @@ profiles:
 
 
   - align: 
-    image: Huayi.jpg
+    image: Qiyu.jpg
     content: 
     Details: false
     category: Visitor/RA
+    image_circular: false # crops the image to make it circular
+    more_info: >
+      <a href="https://www.linkedin.com/in/麒瑜-黄-28661b445" style="font-size: larger; font-weight: bold;">Qiyu Huang</a><br>
+      Visiting Student<br>
+      3D Reconstruction, Computer Vision<br>
+      3230103612@zju.edu.cn
+
+
+
+
+
+# Master
+  # - align: 
+  #   image: 
+  #   content: 
+  #   Details: false
+  #   category: Master
+  #   image_circular: false # crops the image to make it circular
+  #   more_info: >
+    
+  #     <a style="font-size: larger; font-weight: bold;">Ziteng Zhang</a><br>
+
+
+  # - align: 
+  #   image: 
+  #   content: 
+  #   Details: false
+  #   category: Master
+  #   image_circular: false # crops the image to make it circular
+  #   more_info: >
+    
+  #     <a style="font-size: larger; font-weight: bold;">Jiaqi li</a><br>
+
+
+# Alumni
+
+  - align: 
+    image: 
+    content: 
+    Details: false
+    category: Alumni
     image_circular: false # crops the image to make it circular
     more_info: >
       <a href="https://www.linkedin.com/in/华义-张-522463418?utm_source=share_via&utm_content=profile&utm_medium=member_android" style="font-size: larger; font-weight: bold;">Huayi Zhang</a><br>
@@ -258,34 +299,30 @@ profiles:
       3230105273@zju.edu.cn
 
 
-
-
-
-
-# Master
   - align: 
     image: 
     content: 
     Details: false
-    category: Master
+    category: Alumni
     image_circular: false # crops the image to make it circular
     more_info: >
     
-      <a style="font-size: larger; font-weight: bold;">Ziteng Zhang</a><br>
+      <span style="font-size: larger; font-weight: bold;">Ziteng Zhang</span><br>
+      Master's Graduate<br>
 
 
   - align: 
     image: 
     content: 
     Details: false
-    category: Master
+    category: Alumni
     image_circular: false # crops the image to make it circular
     more_info: >
     
-      <a style="font-size: larger; font-weight: bold;">Jiaqi li</a><br>
+      <span style="font-size: larger; font-weight: bold;">Jiaqi li</span><br>
+      Master's Graduate<br>
 
 
-# Alumni
 
   - align:
     image: 
